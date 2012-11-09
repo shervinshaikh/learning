@@ -1,4 +1,16 @@
-Learning::Application.routes.draw do
+Learning::Application.routes.draw do  
+
+  authenticated :user do
+    root :to => 'pages#home'
+  end
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
+  devise_for :users
+
+  resources :pages
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

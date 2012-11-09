@@ -2,6 +2,14 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'newrelic_rpm'
+gem "bootstrap-sass", ">= 2.1.0.0"
+gem "devise", ">= 2.1.2"
+gem "cancan", ">= 1.6.8"
+gem "rolify", ">= 3.2.0"
+gem "simple_form", ">= 2.0.3"
+gem 'bcrypt-ruby', '3.0.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
