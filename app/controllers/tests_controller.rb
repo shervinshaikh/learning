@@ -25,9 +25,16 @@ class TestsController < ApplicationController
   # GET /tests/new.json
   def new
     @test = Test.new
-    @subjects = ['Computer Science']
-    @quarters = ['Fall 2012']
-    @grades = ['A', 'A-', 'B']
+    @subjects = []
+    @quarters = []
+    courses = Course.all
+    courses.each do |s|
+      @subjects << s.subject if s.subject
+      @quarters << s.quarter if s.quarter
+    end
+    #@subjects = [Course.first.subject]
+    #@quarters = ['Fall 2012']
+    @grades = ['A+','A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-']
 
     respond_to do |format|
       format.html # new.html.erb
