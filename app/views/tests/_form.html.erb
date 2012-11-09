@@ -1,0 +1,12 @@
+<%= simple_form_for(@test) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :subject, collection: @subjects, prompt: 'Select a Subject' %>
+    <%= f.input :quarter, collection: @quarters, prompt: 'Select a Quarter' %>
+    <%= f.input :course %>
+    <%= f.input :grade, collection: @grades, prompt: 'Select a Grade' %>
+    <%= f.input :link %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+
+<% end %>

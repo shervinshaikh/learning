@@ -1,0 +1,29 @@
+<h1>Tests:</h1>
+
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Quarter</th>
+    <th>Course</th>
+    <th>Grade</th>
+    <th>Link</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tests.each do |test| %>
+  <tr>
+    <td><%= test.subject %></td>
+    <td><%= test.quarter %></td>
+    <td><%= test.course %></td>
+    <td><%= test.grade %></td>
+    <td><%= link_to 'Download', test.link, target: '_blank' %></td>
+    <td><%= link_to 'Show', test %></td>
+    <td><%= link_to 'Edit', edit_test_path(test) %></td>
+    <% if current_user.has_role? :admin %>
+    <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
