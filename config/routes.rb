@@ -1,6 +1,7 @@
 Learning::Application.routes.draw do  
 
   resources :tests
+  match 'ask' => 'pages#ask'
 
   authenticated :user do
     root :to => 'tests#index'
