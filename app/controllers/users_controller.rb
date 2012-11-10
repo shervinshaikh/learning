@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-
   def index
     #authorize! :see, @user, :message => 'Your account is not activated yet, please contact Shervin.'
   	authorize! :index, @user, :message => 'Not authorized as an administrator.'
@@ -32,10 +31,4 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def setup_role 
-    if self.role_ids.empty?     
-      self.role_ids = :new
-    end
-  end
 end

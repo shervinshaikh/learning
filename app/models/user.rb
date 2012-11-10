@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #before_save :setup_role
+  after_create :setup_role
 
   rolify
   # Include default devise modules. Others available are:
@@ -15,4 +15,13 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name, :rnumber
   validates_uniqueness_of :name, :email, :rnumber, :case_sensitive => false
+
+
+  private
+
+    def setup_role 
+      if self.role_ids.empty?     
+        self.add_role "new"
+      end
+    end    
 end

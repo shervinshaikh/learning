@@ -1,5 +1,6 @@
 class TestsController < ApplicationController
   #load_and_authorize_resource
+  before_filter :direct_to
 
   # GET /tests
   # GET /tests.json
@@ -92,4 +93,13 @@ class TestsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  private
+    def direct_to
+      if current_user.has_role? :new
+        redirect_to edit_user_registration_path
+        flash[:error] = "Contact Shervin for access to files"
+      end
+    end
 end

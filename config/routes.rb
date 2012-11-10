@@ -8,6 +8,7 @@ Learning::Application.routes.draw do
   end
   devise_scope :user do
     root to: "devise/sessions#new"
+    get "sign_in", :to => "devise/sessions#new"
   end
   devise_for :users
 
