@@ -21,8 +21,12 @@
 </p>
 
 <p>
-  <b>Link:</b>
-  <%= @test.link %>
+  <b>Submitted By:</b>
+  <%=  @test.user %>
+</p>
+
+<p>
+  <%= link_to 'Download', @test.link %>
 </p>
 
 
