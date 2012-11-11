@@ -17,6 +17,7 @@
         <th>Quarter</th>
         <th>Course</th>
         <th>Grade</th>
+        <th>Instructor</th>
         <th>Submitted By</th>
         <th></th>
         <th></th>
@@ -30,6 +31,7 @@
     <td><%= test.quarter %></td>
     <td><%= test.course %></td>
     <td><%= test.grade %></td>
+    <td><%= test.instructor %></td>
     <td><%= test.user %></td>
     <td><%= link_to 'Download', test.link, target: '_blank', :class => 'btn btn-mini' %></td>
     <% if current_user.has_role? :admin %>

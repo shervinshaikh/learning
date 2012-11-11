@@ -6,6 +6,7 @@
     <%= f.input :quarter, collection: @quarters, prompt: 'Select a Quarter' %>
     <%= f.input :course %>
     <%= f.input :grade, collection: @grades, prompt: 'Select a Grade' %>
+    <%= f.input :instructor, label: "Instructor's Last Name" %>
     <%= f.hidden_field :user, value: current_user.name %>
     <%= f.input :link %>
     <%= f.button :submit, :class => 'btn-primary' %>

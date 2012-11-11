@@ -1,9 +1,8 @@
 require 'rubygems'  
-require 'nokogiri'  
-require 'open-uri'  
+require 'mechanize'
+require 'open-uri' 
   
-url = "http://my.sa.ucsb.edu/public/curriculum/coursesearch.aspx"  
-doc = Nokogiri::HTML(open(url))  
-message = doc.css("#CourseTitle")
-
-puts message
+agent = Mechanize.new
+agent.get("http://my.sa.ucsb.edu/public/curriculum/coursesearch.aspx")
+form = agent.page
+puts form
