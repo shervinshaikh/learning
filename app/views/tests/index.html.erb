@@ -1,4 +1,14 @@
 <h2>Tests:</h2>
+
+<!-- = form_tag movies_path, :method => :get, :id => 'ratings_form' do
+  = hidden_field_tag "title_sort", true if @title_header
+  = hidden_field_tag ":release_date_sort", true if @date_header
+  Include: 
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]", 1, @selected_ratings.include?(rating), :id => "ratings_#{rating}"
+  = submit_tag 'Refresh', :id => 'ratings_submit' -->
+
 <div class="span8">
 <table class="table table-condensed">
     <thead>
@@ -21,10 +31,10 @@
     <td><%= test.course %></td>
     <td><%= test.grade %></td>
     <td><%= test.user %></td>
-    <td><%= link_to 'Download', test.link, target: '_blank' %></td>
+    <td><%= link_to 'Download', test.link, target: '_blank', :class => 'btn btn-mini' %></td>
     <% if current_user.has_role? :admin %>
-    <td><%= link_to 'Edit', edit_test_path(test) %></td>
-    <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_test_path(test), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini' %></td>
     <% end %>
   </tr>
 <% end %>

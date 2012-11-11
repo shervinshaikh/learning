@@ -5,6 +5,7 @@
       <tr>
           <th>Username</th>
           <th>Email</th>
+          <th>Ritual #</th>
           <th>Registered</th>
           <th>Role</th>
           <th></th>
@@ -16,6 +17,7 @@
     <tr>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
+        <td><%= user.rnumber %></td>
         <td><%= user.created_at.to_date %></td>
         <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
         <td>
